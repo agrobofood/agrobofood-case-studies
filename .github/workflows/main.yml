@@ -23,15 +23,18 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Sphinx Pages
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        uses: seanzhengw/sphinx-pages@v1
+      - uses: actions/setup-python@v2
+      - uses: actions/checkout@master
         with:
-          github_token: $\{{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - name: Build and Commit
+        uses: sphinx-notes/pages@v2
+        with:
+          requirements_path: "./req.txt"
+          documentation_path: "."
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
           

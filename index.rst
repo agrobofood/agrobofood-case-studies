@@ -14,7 +14,7 @@ Welcome to agROBOfood Case Studies's documentation!
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Robot Software
 
    Robot-Software-Platforms

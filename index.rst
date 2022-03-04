@@ -19,6 +19,7 @@ Welcome to agROBOfood Case Studies's documentation!
 
    Robot-Software-Platforms
    CICD-for-robotics
+   Software-Development-With-ROS
 
 
 .. toctree::

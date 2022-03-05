@@ -9,25 +9,25 @@ requirements for creating documentation are the following.
 Requirements
 """"""""""""
 
-* **Requirement: Consistency over the project lifecycle**
+* **Consistency over the project lifecycle**
   
   On the on side documentation of the requirements, design and concept, code, tests and interfaces. In order to achieve consistency
   in the documentation a common tool used. 
 
 
-* **Requirement: Automated Code Documentation Mechanism**
+* **Automated Code Documentation Mechanism**
 
   As most ROS2 projects are heavy on the software side, a documentation tool needs strong code documentation
   mechanisms for at least C++ and Python.
 
-* **Requirement: Online and Offline File Formats**
+* **Online and Offline File Formats**
   
   Documentation can be delivered in different ways. Usually, when creating a modern product, you will want to
   provide documentation and manuals that are easily accessible online as a website as well as PDF or printed
   documents. A Documentation tool needs to provide the capabilities to generate these from the same source
   text.
 
-* **Requirement: Configurable Looks**
+* **Configurable Looks**
   
   The design of the documentation should be configurable in order to be able to brand the documentation of a 
   project or product.
@@ -48,10 +48,11 @@ documentation. Sphinx can be used for all documentation purposes throught out th
 
 
 
-Unit Coding
+Coding
 -----------
-Python
-C++
+
+
+
 
 
 
@@ -84,15 +85,37 @@ Pytest
 
 Integration testing
 -------------------
-launch_testing
+On very difficult task in robotics is integration testing. This means testing whether all
+software modules of the system are working together correctly.
 
+Requirements
+""""""""""""
 
+* **Launch Automation**
+The different modules of the robot software system under test as well as the test software modules
+need to be started. Often this has to happen in a specific squence.
 
+* **Monitoring Automation**
+The outputs of the robots software system and modules under test need to be monitored and
+compared with the expected values.
+
+Tools
+""""""
+
+**launch_testing**: 
+ROS2 offers the package launch_testing which enables integration tests. This enables creating
+a launch description for the system under test as well as writing integration tests with pytest.
+The tests can directly be integrated into the project CMAKELISTS.txt for automated test execution.
+
+**plain scripting**:
+Simple integration tests can also be done by simple bash scripting. However, for more complex tests,
+using launch_testing is recommended.
 
 
 Continuous integration
 ----------------------
 
 
-
+Requirements
+""""""""""""
 

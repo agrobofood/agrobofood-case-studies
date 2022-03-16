@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Source Robotics Middleware &mdash; agROBOfood Case Studies  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Open Source Navigation" href="Navigation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> agROBOfood Case Studies
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Case Studies Robot Safety</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../robot_safety/Robot-Safety-Strawberry-Harvesting.html">Strawberry harvesting and tending robots</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Case Studies Robot Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../robot_software/CICD-for-robotics.html">Continuous Integration for Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robot_software/Robot-Software-Platforms.html">Robot Software Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robot_software/Software-Development-With-ROS.html">Software Development with ROS2</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Case Studies</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/robot_security.html">Robot Security Study</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Relevant Standards</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Communication.html">Communication Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Food.html">Food Safety Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Modularity.html">Robot Modularity Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Safety.html">Safety Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Security.html">Security Standards</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Best Practices</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Licensing.html">Open Source Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LowLevelCommunication.html">Open Source Low-level Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Manipulation.html">Open Source Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Navigation.html">Open Source Navigation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Open Source Robotics Middleware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#recommendations">Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#related-links-literature">Related Links &amp; Literature</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">agROBOfood Case Studies</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Open Source Robotics Middleware</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/best_practices/Robotics-Middleware.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="open-source-robotics-middleware">
+<h1>Open Source Robotics Middleware<a class="headerlink" href="#open-source-robotics-middleware" title="Permalink to this headline"></a></h1>
+<p>Agricultural robots are complex systems. Typically many different
+processes need to run concurrently, such as navigation, perception,
+manipulation and process and mission control. Enabling this in a software
+system while keeping the software modular and well-structured calls for
+a programming framework including middleware.</p>
+<p>Currently, there are a number of robot software frameworks and middlewares
+available. Most notably:</p>
+<ul class="simple">
+<li><p>ROS/ROS2</p></li>
+<li><p>YARP</p></li>
+<li><p>ROCK</p></li>
+<li><p>OROCOS</p></li>
+</ul>
+<section id="recommendations">
+<h2>Recommendations<a class="headerlink" href="#recommendations" title="Permalink to this headline"></a></h2>
+<p>ROS2 is currently the robot middleware that is being developed and driven in
+the most professional way (by a consortium of more than 20 organisations).
+Therefore we recommend using ROS2 when building a new robot. YARP, OROCOS and ROCK
+are also viable solutions, but lack the ecosystem size of ROS/ROS2.</p>
+</section>
+<section id="related-links-literature">
+<h2>Related Links &amp; Literature<a class="headerlink" href="#related-links-literature" title="Permalink to this headline"></a></h2>
+<p>[1] <a class="reference external" href="https://ros.org/">https://ros.org/</a></p>
+<p>[2] <a class="reference external" href="https://yarp.it/latest//">https://yarp.it/latest//</a></p>
+<p>[3] <a class="reference external" href="https://www.rock-robotics.org/">https://www.rock-robotics.org/</a></p>
+<p>[4] <a class="reference external" href="https://orocos.org/">https://orocos.org/</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Navigation.html" class="btn btn-neutral float-left" title="Open Source Navigation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, agrobofood.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

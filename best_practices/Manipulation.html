@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Source Manipulation &mdash; agROBOfood Case Studies  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Open Source Navigation" href="Navigation.html" />
+    <link rel="prev" title="Open Source Low-level Communication" href="LowLevelCommunication.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> agROBOfood Case Studies
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Case Studies Robot Safety</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../robot_safety/Robot-Safety-Strawberry-Harvesting.html">Strawberry harvesting and tending robots</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Case Studies Robot Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../robot_software/CICD-for-robotics.html">Continuous Integration for Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robot_software/Robot-Software-Platforms.html">Robot Software Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robot_software/Software-Development-With-ROS.html">Software Development with ROS2</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Case Studies</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/robot_security.html">Robot Security Study</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Relevant Standards</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Communication.html">Communication Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Food.html">Food Safety Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Modularity.html">Robot Modularity Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Safety.html">Safety Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Security.html">Security Standards</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Best Practices</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Licensing.html">Open Source Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LowLevelCommunication.html">Open Source Low-level Communication</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Open Source Manipulation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#recommendations">Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#related-links-literature">Related Links &amp; Literature</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Navigation.html">Open Source Navigation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Robotics-Middleware.html">Open Source Robotics Middleware</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">agROBOfood Case Studies</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Open Source Manipulation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/best_practices/Manipulation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="open-source-manipulation">
+<h1>Open Source Manipulation<a class="headerlink" href="#open-source-manipulation" title="Permalink to this headline"></a></h1>
+<p>Once the location and orientation of the crop has been determined,
+the robot must decide how to position the end effector. This is a
+constrained optimization problem where the stem should be cut but no
+other plant parts should be damaged.</p>
+<p>While weeding end-effectors can usually move in a straight line toward
+the weed, for crop harvesting there are often severe obstacles such
+as branches and other unripe or un(der)developed crops. This
+requires advanced path planning algorithms to avoid those obstacles.
+The current best practice is to use a randomized or optimizing motion
+planner as implemented in OMPL which can be used through the package
+MoveIt in ROS. New motion planning algorithms are still in development,
+and a very interesting research avenue is to plan motions that purposefully
+push parts of the obstacles away. Retrieving the crop is yet another
+challenging motion planning problem, because now a collision-free motion
+for the manipulator including the crop must be found.</p>
+<section id="recommendations">
+<h2>Recommendations<a class="headerlink" href="#recommendations" title="Permalink to this headline"></a></h2>
+<p>MoveIt is a user-friendly open-source robotics manipulation platform
+which runs on top of ROS and ROS2. It leverages ROS software by providing
+high-level functionalities for robotics manipulation such as collision
+checking, inverse kinematic algorithms, trajectory processing, etc.
+To the best of our knowledge, it is one of the most widely used open-source
+robotics manipulation platforms for developing commercial applications,
+prototyping designs, and benchmarking algorithms.</p>
+<p>If you are looking for a solution without using MoveIt, there is an alternative
+motion planning software called tesseract_ros.</p>
+<p>If you do not want to use ROS and MoveIt you can use OMPL, which provides
+a large number of advanced manipulation algorithms.</p>
+</section>
+<section id="related-links-literature">
+<h2>Related Links &amp; Literature<a class="headerlink" href="#related-links-literature" title="Permalink to this headline"></a></h2>
+<p>[1] <a class="reference external" href="https://moveit.ros.org/">https://moveit.ros.org/</a></p>
+<p>[2] <a class="reference external" href="https://github.com/tesseract-robotics/tesseract_ros">https://github.com/tesseract-robotics/tesseract_ros</a></p>
+<p>[3] <a class="reference external" href="https://ompl.kavrakilab.org/">https://ompl.kavrakilab.org/</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="LowLevelCommunication.html" class="btn btn-neutral float-left" title="Open Source Low-level Communication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Navigation.html" class="btn btn-neutral float-right" title="Open Source Navigation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, agrobofood.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

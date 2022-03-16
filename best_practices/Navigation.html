@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Source Navigation &mdash; agROBOfood Case Studies  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Open Source Robotics Middleware" href="Robotics-Middleware.html" />
+    <link rel="prev" title="Open Source Manipulation" href="Manipulation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> agROBOfood Case Studies
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Case Studies Robot Safety</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../robot_safety/Robot-Safety-Strawberry-Harvesting.html">Strawberry harvesting and tending robots</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Case Studies Robot Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../robot_software/CICD-for-robotics.html">Continuous Integration for Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robot_software/Robot-Software-Platforms.html">Robot Software Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robot_software/Software-Development-With-ROS.html">Software Development with ROS2</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Case Studies</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/robot_security.html">Robot Security Study</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Relevant Standards</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Communication.html">Communication Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Food.html">Food Safety Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Modularity.html">Robot Modularity Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Safety.html">Safety Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Security.html">Security Standards</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Best Practices</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Licensing.html">Open Source Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LowLevelCommunication.html">Open Source Low-level Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Manipulation.html">Open Source Manipulation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Open Source Navigation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#recommendations">Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#related-links-literature">Related Links &amp; Literature</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Robotics-Middleware.html">Open Source Robotics Middleware</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">agROBOfood Case Studies</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Open Source Navigation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/best_practices/Navigation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="open-source-navigation">
+<h1>Open Source Navigation<a class="headerlink" href="#open-source-navigation" title="Permalink to this headline"></a></h1>
+<p><strong>SLAM algorithm</strong></p>
+<p>SLAM stands for Simultaneous Localization and Mapping, which is a category
+of algorithms that has various implementations [44-46, 130]. All mobile
+robotic devices including (semi-) self-driving cars use this type of
+algorithm. For the current version of this document, it is unclear if
+there already is a best practice regarding the choice and implementation
+of SLAM for agriculture robotics. The natural yet repetitive environment
+makes it hard to use landmarks for map-building and navigation, yet (at
+least for outdoor agriculture) the GNSS is highly accurate.</p>
+<p><strong>Path planning algorithm</strong></p>
+<p>Path planning is a generic algorithm that will be present
+in all mobile robots [52]. In agriculture, path planning is in some regards
+simpler than in challenging environments such as crowded public spaces. A
+difficult challenge remains the presence of foliage which should not be
+considered as a hard constraint, but can (and must) occasionally be pushed
+aside.</p>
+<section id="recommendations">
+<h2>Recommendations<a class="headerlink" href="#recommendations" title="Permalink to this headline"></a></h2>
+<p>When implmenting navigation on mobile robots it is always a good choice to
+start with the ROS/ROS2 navigation stack. It is one of the most used navi-
+gation stacks in robotics and can be easily extended.
+Inputs generally required in Navigation Stack are odometry and sensor data
+such as a continuous stream of 2D/3D scans or 3D point clouds of the
+immediate environment. Outputs are velocity commands sent to a mobile
+base.</p>
+</section>
+<section id="related-links-literature">
+<h2>Related Links &amp; Literature<a class="headerlink" href="#related-links-literature" title="Permalink to this headline"></a></h2>
+<p>[1] <a class="reference external" href="https://navigation.ros.org/">https://navigation.ros.org/</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Manipulation.html" class="btn btn-neutral float-left" title="Open Source Manipulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Robotics-Middleware.html" class="btn btn-neutral float-right" title="Open Source Robotics Middleware" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, agrobofood.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

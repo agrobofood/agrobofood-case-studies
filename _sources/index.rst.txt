@@ -3,23 +3,45 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to agROBOfood Case Studies's documentation!
+agROBOfood Case Studies and Best Practices
 ===================================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Robot Safety
+   :maxdepth: 1
+   :caption: Case Studies Robot Safety
+   :glob:
 
-   Robot-Safety-Strawberry-Harvesting
+   robot_safety/*
 
 
 .. toctree::
    :maxdepth: 1
-   :caption: Robot Software
+   :caption: Case Studies Robot Software
+   :glob:
 
-   Robot-Software-Platforms
-   CICD-for-robotics
-   Software-Development-With-ROS
+   robot_software/*
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Other Case Studies
+   :glob:
+
+   other/*
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Relevant Standards
+   :glob:
+
+   standards/*
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Best Practices
+   :glob:
+
+   best_practices/*
+
 
 
 .. toctree::

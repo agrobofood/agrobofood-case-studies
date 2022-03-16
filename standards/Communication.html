@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Communication Standards &mdash; agROBOfood Case Studies  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Food Safety Standards" href="Food.html" />
+    <link rel="prev" title="Robot Security Study" href="../other/robot_security.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> agROBOfood Case Studies
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Case Studies Robot Safety</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../robot_safety/Robot-Safety-Strawberry-Harvesting.html">Strawberry harvesting and tending robots</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Case Studies Robot Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../robot_software/CICD-for-robotics.html">Continuous Integration for Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robot_software/Robot-Software-Platforms.html">Robot Software Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robot_software/Software-Development-With-ROS.html">Software Development with ROS2</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Case Studies</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/robot_security.html">Robot Security Study</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Relevant Standards</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Communication Standards</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#iso-11783-isobus">ISO 11783 - ISOBUS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#broadr-reach-high-speed-isobus">BroadR-Reach - High Speed ISOBUS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#iso-11783-isoxml">ISO  11783 - ISOXML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#iec-20922-mqtt">IEC 20922 - MQTT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#iec-62541-opc-ua">IEC 62541 - OPC-UA</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Food.html">Food Safety Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Modularity.html">Robot Modularity Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Safety.html">Safety Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Security.html">Security Standards</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Best Practices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/Licensing.html">Open Source Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/LowLevelCommunication.html">Open Source Low-level Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/Manipulation.html">Open Source Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/Navigation.html">Open Source Navigation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/Robotics-Middleware.html">Open Source Robotics Middleware</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">agROBOfood Case Studies</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Communication Standards</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/standards/Communication.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="communication-standards">
+<h1>Communication Standards<a class="headerlink" href="#communication-standards" title="Permalink to this headline"></a></h1>
+<section id="iso-11783-isobus">
+<h2>ISO 11783 - ISOBUS<a class="headerlink" href="#iso-11783-isobus" title="Permalink to this headline"></a></h2>
+<p>Electronics are the key to making machinery more efficient,
+precise and economical. ISOBUS is one of the most important
+techniques here. The idea behind ISOBUS is ‘plug and play’
+with any tractor-terminal-implement-combination. But in
+practice it is not quite that easy. How well the components
+of an ISOBUS system work together depends on what they have
+in common, i.e. the functionalities supported by all of
+them. The worldwide ISO 11783 (ISOBUS) standard defines the
+communication between agricultural machinery, mainly tractors
+and implements, and also the data transfer between these mobile
+machines and farm software applications. It is the most
+significant and comprehensive standard to date, but it leaves
+room for interpretation, which has led to a great number of
+innovative but proprietary ISOBUS solutions. In order to
+minimize the room for interpretation the AEF develops
+guidelines which add to the ISO standard and thus allow
+for precise definitions of ISOBUS functionalities. Ultimately
+this provides for clarity regarding the compatibility of
+ISOBUS products. The ISOBUS standard specifies a serial
+data network for control and communications on forestry or
+agricultural tractors and implements. ISOBUS is based on
+physical layer CAN and connect tractor and implement.</p>
+</section>
+<section id="broadr-reach-high-speed-isobus">
+<h2>BroadR-Reach - High Speed ISOBUS<a class="headerlink" href="#broadr-reach-high-speed-isobus" title="Permalink to this headline"></a></h2>
+<p>Electronics are the key to making machinery more efficient,
+precise and economical. ISOBUS is one of the most important
+techniques here. The idea behind ISOBUS is ‘plug and play’ with
+any tractor-terminal-implement-combination. But in practice it
+is not quite that easy. How well the components of an ISOBUS
+system work together depends on what they have in common, i.e.
+the functionalities supported by all of them. The worldwide ISO
+11783 (ISOBUS) standard defines the communication between
+agricultural machinery, mainly tractors and implements, and
+also the data transfer between these mobile machines and farm
+software applications. It is the most significant and comprehensive
+standard to date, but it leaves room for interpretation,
+which has led to a great number of innovative but proprietary
+ISOBUS solutions. In order to minimize the room for interpretation
+the AEF develops guidelines which add to the ISO standard and
+thus allow for precise definitions of ISOBUS functionalities.
+Ultimately this provides for clarity regarding the compatibility
+of ISOBUS products. The ISOBUS standard specifies a serial data
+network for control and communications on forestry or agricultural
+tractors and implements. ISOBUS is based on physical layer CAN
+and connect tractor and implement.</p>
+<p>High Speed ISOBUS will cover the following Agriculture use cases:</p>
+<ul class="simple">
+<li><p>Command and Control like “Sophisticated Universal Terminal“(VT) and more precise TaskControl / SectionControl.</p></li>
+<li><p>Real-time Video for Remote Process viewing as an example.</p></li>
+<li><p>Bulk Data Transfer used for e.g. Guidance, Coverage and Prescription.</p></li>
+<li><p>Enhanced Service and diagnostic in mixed manufacturer systems and for RMI (Repair-Maintenance-Information).</p></li>
+</ul>
+</section>
+<section id="iso-11783-isoxml">
+<h2>ISO  11783 - ISOXML<a class="headerlink" href="#iso-11783-isoxml" title="Permalink to this headline"></a></h2>
+<p>ISOXML is a data format used by ISO11783 part 10, more commonly referred to
+as the Task Controller. It is the Task Controller software on the tractor
+display which communicates with the ISOBUS implement, telling it how much
+product (seed, fertilizer, etc) to apply based on which part of the field
+the tractor/implement is in. The Task Controller software is then recording
+all the work that the implement has done, what was actually applied and
+where, how many hay bales have been made, etc. All of this information
+is logged in the ISOXML data format. Use of this common format allows the
+farmer to export the data from the tractor display and import it into
+his/her Farm Management Information System (FMIS) of choice for analysis
+and record keeping. The FMIS can also be used to plan tasks, which might
+even include the creation of a prescription map for product application
+(seed, fertiliser, etc). These tasks are then exported from the FMIS and
+imported into the tractor display before the driver starts work. This is
+again using the ISOXML data format.</p>
+</section>
+<section id="iec-20922-mqtt">
+<h2>IEC 20922 - MQTT<a class="headerlink" href="#iec-20922-mqtt" title="Permalink to this headline"></a></h2>
+<p>MQTT is an open OASIS and ISO standard (ISO/IEC 20922) lightweight,
+publish-subscribe network protocol that transports messages between
+devices. The protocol usually runs over TCP/IP; however, any network
+protocol that provides ordered, lossless, bi-directional connections
+can support MQTT. It is designed for connections with remote locations
+where a “small code footprint” is required or the network bandwidth
+is limited. MQTT has security features integrated and works well in
+wireless networks.</p>
+</section>
+<section id="iec-62541-opc-ua">
+<h2>IEC 62541 - OPC-UA<a class="headerlink" href="#iec-62541-opc-ua" title="Permalink to this headline"></a></h2>
+<p>OPC-UA is a platform independent, service oriented, standardized
+architecture for data exchange to cloud applications. The architecture
+and its ecosystem of companion specifications is governed by the OPC-UA
+foundation. Its main characteristics are a model-driven approach for
+interface specification, security integration as well as support for
+both publish/subscribe and client/server communication patterns. All
+data models that have been submitted to the OPC-UA foundation are freely
+available. The standard is mainly used in industrial settings but also
+sees more and more use in service robotics.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../other/robot_security.html" class="btn btn-neutral float-left" title="Robot Security Study" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Food.html" class="btn btn-neutral float-right" title="Food Safety Standards" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, agrobofood.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

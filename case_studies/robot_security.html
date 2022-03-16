@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robot Security Study &mdash; agROBOfood Case Studies  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Communication Standards" href="../standards/Communication.html" />
+    <link rel="prev" title="Development of a ROS2 component" href="Software-Development-With-ROS.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> agROBOfood Case Studies
+            <img src="../_static/agrobofood.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Case Studies</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CICD-for-robotics.html">Continuous Integration for Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Robot-Safety-Strawberry-Harvesting.html">Strawberry harvesting and tending robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Robot-Software-Platforms.html">Robot Software Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Software-Development-With-ROS.html">Development of a ROS2 component</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Robot Security Study</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#attack-targets">Attack targets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attack-vectors">Attack vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#common-counter-measures">Common counter measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#security-needs-for-robotics">Security needs for robotics</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Relevant Standards</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Communication.html">Communication Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Food.html">Food Safety Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Modularity.html">Robot Modularity Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Safety.html">Safety Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standards/Security.html">Security Standards</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Best Practices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/Licensing.html">Open Source Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/LowLevelCommunication.html">Open Source Low-level Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/Manipulation.html">Open Source Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/Navigation.html">Open Source Navigation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/Robotics-Middleware.html">Open Source Robotics Middleware</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">agROBOfood Case Studies</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Robot Security Study</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/case_studies/robot_security.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="robot-security-study">
+<h1>Robot Security Study<a class="headerlink" href="#robot-security-study" title="Permalink to this headline"></a></h1>
+<p>In this document, we detail the challenges seen by the consortium members with regards to cyber-security in the robotics domain. The information presented in this document was gathered during a meet-up on October 6, 2021. The goal of this document is to highlight problems companies need to tackle when working with robots in modern working environments.</p>
+<p>As the document is based on information gathered during an internal workshop, it is necessary to point out that the document is limited by the perspectives of the participants of the workshop. The robot application areas of activity of the participants are noted here.</p>
+<p><strong>Service robotics</strong>:</p>
+<ul class="simple">
+<li><p>Developer of robots for logistics</p></li>
+<li><p>Healthcare robot systems</p></li>
+<li><p>Surveillance and monitoring robot systems</p></li>
+<li><p>Cleaning or delivery robots</p></li>
+<li><p>Strawberry harvesting robots</p></li>
+</ul>
+<p><strong>Industrial robotics</strong>:</p>
+<ul class="simple">
+<li><p>Manufacturing of medical equipment</p></li>
+<li><p>Manufacturing of consumer products</p></li>
+<li><p>Robotic handling applications</p></li>
+<li><p>Assembly applications</p></li>
+<li><p>Packaging applications</p></li>
+<li><p>Workpiece inspection</p></li>
+</ul>
+<p><strong>Robotics research</strong></p>
+<ul class="simple">
+<li><p>Academic research</p></li>
+</ul>
+<section id="attack-targets">
+<h2>Attack targets<a class="headerlink" href="#attack-targets" title="Permalink to this headline"></a></h2>
+<p>The participants identified a number of attack targets, that companies in robotics typically try to protect.</p>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Attack targets</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Safety</p></th>
+<th class="head"><p>Production Process</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mobile robots controlled by an attacker hitting humans or other obstacles</p></td>
+<td><p>Cost due to production interruption caused by cyber-attack: downtime and potential ransom</p></td>
+<td><p>Intellectual property loss (product recipes, process parameters and info …)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Collaborative robots controlled by an attacker hitting humans or other obstacles</p></td>
+<td><p>Cost due to changed product recipes parameters and production of faulty products</p></td>
+<td><p>Business data loss (e.g. productivity, batch information, sales, …)</p></td>
+</tr>
+<tr class="row-even"><td><p>Disabling interlocks in manufacturing lines and consequent destruction of the machinery</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attack-vectors">
+<h2>Attack vectors<a class="headerlink" href="#attack-vectors" title="Permalink to this headline"></a></h2>
+<p>The participants identified a number of attack vectors, that robots and robot systems are prone to.</p>
+<table class="colwidths-given docutils align-default" id="id2">
+<caption><span class="caption-text">Attack targets</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Connectivity</p></th>
+<th class="head"><p>Operator</p></th>
+<th class="head"><p>Supply chain</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Direct connection of USB devices to robots</p></td>
+<td><p>Evil consultant</p></td>
+<td><p>Insecure networks supplied by third party</p></td>
+</tr>
+<tr class="row-odd"><td><p>Direct connection of network devices to robots</p></td>
+<td><p>Insider attacker (i.e. “revenge” from employee, industrial espionage, …)</p></td>
+<td><p>Trojanized system integrator</p></td>
+</tr>
+<tr class="row-even"><td><p>Endpoint vulnerability</p></td>
+<td></td>
+<td><p>Third party and Open Source Software Infiltration</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="common-counter-measures">
+<h2>Common counter measures<a class="headerlink" href="#common-counter-measures" title="Permalink to this headline"></a></h2>
+<p>In order to protect robots the participants noted down a number of measures that are usually used to secure robots.</p>
+<ul class="simple">
+<li><p>Network protection:</p>
+<ul>
+<li><p>Firewall</p></li>
+<li><p>Network Isolation</p></li>
+</ul>
+</li>
+<li><p>Endpoint protection</p></li>
+<li><p>Authentication</p></li>
+<li><p>Data encryption</p></li>
+<li><p>Encrypted control</p></li>
+</ul>
+<p>Today, mainly network protection is used for protecting robot systems. Organizations like Alias Robotics provide special Endpoint protection software for industrial and mobile robots. With DDS and SROS2 authentication, encryption and access control become available in robots running ROS2.</p>
+</section>
+<section id="security-needs-for-robotics">
+<h2>Security needs for robotics<a class="headerlink" href="#security-needs-for-robotics" title="Permalink to this headline"></a></h2>
+<p>The workshop yielded a number of security needs that are important to the robotics community. These are noted down and described in the following.</p>
+<ul>
+<li><p><strong>Secure robot architectures for connectivity in networks</strong></p>
+<p>Today’s industrial robots have mainly been developed for deployment in isolated networks where the risk of a cyber attack is considerably reduced. Therefore it is very difficult to integrate today’s robots securely into company networks or even web infrastructures. The goal for ROS2 should be to provide an infrastructure that is secure enough for exposing robots based on ROS2 to company networks or even the open Internet with acceptable risk.</p>
+<p><strong>Todos</strong>:</p>
+<ul class="simple">
+<li><p>Practical examples of ROS2 security features for real use cases</p></li>
+<li><p>Risk estimation for secured example systems</p></li>
+</ul>
+</li>
+<li><p><strong>Toolchain for easy robot monitoring and patching security vulnerabilities</strong></p>
+<p>When operating a fleet of robots be it industrial robots or service robots  it is today hard to monitor the robots and enable fleet wide patching of robots. This becomes even more difficult when operating a heterogeneous fleet of robots with robots supplied by different OEMs. There are solutions such as Version Dog available for monitoring Softwareversions on PLC and industrial robots, but these solutions currently only target a too small range of devices. For ROS2 we should have a solution for monitoring of robots and automated updates of the robot software in case of vulnerabilities in a way that avoids downtime as much as possible.</p>
+<p><strong>Todos</strong>:</p>
+<ul class="simple">
+<li><p>Monitoring toolchain to detect suspicious behaviour on robot systems</p></li>
+<li><p>Monitoring and Update toolchain to patch security vulnerablilit</p></li>
+</ul>
+</li>
+<li><p><strong>Hardened OS design with micro-kernel and permission layer</strong></p>
+<p>Micro-kernels enable setting permissions per device of a system and as such are reducing the risk of security risks, especially by separation of concerns. A number of micro-kernels exists even open source projects such as L4, SEL4 or hypervisors such as Jailhouse or XEN.</p>
+<p><strong>Todos</strong>:</p>
+<ul class="simple">
+<li><p>Provide an example for roboticists to use</p></li>
+</ul>
+</li>
+<li><p><strong>Security guidelines or standards for validating security in robotics systems</strong></p>
+<p>Standards and methodologies such as IEC 62443, ATT&amp;CK ICS and Threat modeling exist and enable validating the security of robotic systems.</p>
+</li>
+<li><p><strong>Interaction between robotics community and security community</strong></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Software-Development-With-ROS.html" class="btn btn-neutral float-left" title="Development of a ROS2 component" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../standards/Communication.html" class="btn btn-neutral float-right" title="Communication Standards" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, agrobofood.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

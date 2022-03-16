@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Robot Security Study &mdash; agROBOfood Case Studies  documentation</title>
+  <title>Development of a ROS2 component &mdash; agROBOfood Case Studies  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Communication Standards" href="../standards/Communication.html" />
-    <link rel="prev" title="Software Development with ROS2" href="../robot_software/Software-Development-With-ROS.html" /> 
+    <link rel="next" title="Robot Security Study" href="robot_security.html" />
+    <link rel="prev" title="Robot Software Platforms" href="Robot-Software-Platforms.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -28,6 +28,7 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
             <a href="../index.html" class="icon icon-home"> agROBOfood Case Studies
+            <img src="../_static/agrobofood.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -37,19 +38,20 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Case Studies Robot Safety</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../robot_safety/Robot-Safety-Strawberry-Harvesting.html">Strawberry harvesting and tending robots</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Case Studies Robot Software</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../robot_software/CICD-for-robotics.html">Continuous Integration for Robotics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../robot_software/Robot-Software-Platforms.html">Robot Software Platforms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../robot_software/Software-Development-With-ROS.html">Software Development with ROS2</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Other Case Studies</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Case Studies</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Robot Security Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CICD-for-robotics.html">Continuous Integration for Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Robot-Safety-Strawberry-Harvesting.html">Strawberry harvesting and tending robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Robot-Software-Platforms.html">Robot Software Platforms</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development of a ROS2 component</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#planning-design">Planning &amp; Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workspace-setup-package-creation">Workspace Setup &amp; Package Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#development-tools">Development Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-control-system">Version Control System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#continuous-integration">Continuous Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="robot_security.html">Robot Security Study</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Relevant Standards</span></p>
 <ul>
@@ -82,9 +84,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Robot Security Study</li>
+      <li>Development of a ROS2 component</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/other/robot_security.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/case_studies/Software-Development-With-ROS.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -92,16 +94,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="robot-security-study">
-<h1>Robot Security Study<a class="headerlink" href="#robot-security-study" title="Permalink to this headline"></a></h1>
+  <section id="development-of-a-ros2-component">
+<h1>Development of a ROS2 component<a class="headerlink" href="#development-of-a-ros2-component" title="Permalink to this headline"></a></h1>
+<p>When you are developing a ROS2 system usually you will first check if
+the ROS2 ecosystem does not provide all components that you need for your
+system. If components are missing, you need to develop the component on your
+own. In this case study we will take a look into the steps necessary for
+such a development.</p>
+<section id="planning-design">
+<h2>Planning &amp; Design<a class="headerlink" href="#planning-design" title="Permalink to this headline"></a></h2>
+<p>Before starting with the development of your ROS2 package, you need to plan
+a few things. Most importantly, you should already decide whether your
+package will be open sourced and if so which <strong>open source license</strong> to use for your package.
+Also if you want to integrate your ROS2 package into a ROS Distro you
+need to think about how you want to maintain the package and what kind of
+quality level your package should have. <strong>ROS2 package quality levels</strong> can be
+here: <a class="reference external" href="https://discourse.ros.org/t/rep-2004-package-quality-categories/11988">https://discourse.ros.org/t/rep-2004-package-quality-categories/11988</a></p>
+</section>
+<section id="workspace-setup-package-creation">
+<h2>Workspace Setup &amp; Package Creation<a class="headerlink" href="#workspace-setup-package-creation" title="Permalink to this headline"></a></h2>
+</section>
+<section id="development-tools">
+<h2>Development Tools<a class="headerlink" href="#development-tools" title="Permalink to this headline"></a></h2>
+</section>
+<section id="version-control-system">
+<h2>Version Control System<a class="headerlink" href="#version-control-system" title="Permalink to this headline"></a></h2>
+</section>
+<section id="continuous-integration">
+<h2>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline"></a></h2>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../robot_software/Software-Development-With-ROS.html" class="btn btn-neutral float-left" title="Software Development with ROS2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../standards/Communication.html" class="btn btn-neutral float-right" title="Communication Standards" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Robot-Software-Platforms.html" class="btn btn-neutral float-left" title="Robot Software Platforms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="robot_security.html" class="btn btn-neutral float-right" title="Robot Security Study" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

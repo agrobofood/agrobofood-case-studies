@@ -1,3 +1,5 @@
 {
-    "restructuredtext.confPath": "${workspaceFolder}"
+    "restructuredtext.confPath": "${workspaceFolder}",
+    "esbonio.sphinx.confDir": "/home/christoph/Documents/case-studies",
+    "esbonio.server.enabled": true
 }

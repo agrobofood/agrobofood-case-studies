@@ -6,27 +6,14 @@
 agROBOfood Case Studies and Best Practices
 ===================================================
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Case Studies Robot Safety
-   :glob:
-
-   robot_safety/*
-
+agROBOfood builds the European ecosystem for the effective adoption of robotics technologies in the European agri-food sector and accelerates the digital transformation to make the European agri-food sector more efficient and competitive.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Case Studies Robot Software
+   :caption: Case Studies
    :glob:
 
-   robot_software/*
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Other Case Studies
-   :glob:
-
-   other/*
+   case_studies/*
 
 .. toctree::
    :maxdepth: 1
@@ -47,3 +34,6 @@ agROBOfood Case Studies and Best Practices
 .. toctree::
    :maxdepth: 2
    :caption: Robot Hardware
+
+
+This work has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement Nº 825395.

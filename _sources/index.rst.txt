@@ -30,10 +30,4 @@ agROBOfood builds the European ecosystem for the effective adoption of robotics 
    best_practices/*
 
 
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Robot Hardware
-
-
 This work has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement Nº 825395.

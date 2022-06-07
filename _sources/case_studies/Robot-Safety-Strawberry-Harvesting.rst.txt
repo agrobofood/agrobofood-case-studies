@@ -19,8 +19,9 @@ strawberries and on the farms premises for travelling to the next poly-tunnel or
 to travel to its parking spot.
 
 
-Related Standards
+Approach
 --------------------
+An analysis of existing standards was executed.
 
 EN ISO 18497: Agricultural machinery and tractors — Safety of highly automated agricultural machines — Principles for design
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -139,8 +140,8 @@ As the robot in the studied use case is only operated on private property this s
 
 
 
-Identified standardisation needs
---------------------------------
+Lessons Learned / Standardisation needs
+---------------------------------------
 When looking into this use case a number of standardization needs were identified. As the planned strawberry picking robot classifies
 as highly automated agricultural machinery, ISO 18497 was taken as a starting point. The standard is applicable for operation in the
 field only and not for operation on the farmyard or in stables. The standard also does not point out whether it can be applied for field

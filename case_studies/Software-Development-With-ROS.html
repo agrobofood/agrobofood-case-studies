@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -95,14 +96,14 @@
            <div itemprop="articleBody">
              
   <section id="development-of-a-ros2-component">
-<h1>Development of a ROS2 component<a class="headerlink" href="#development-of-a-ros2-component" title="Permalink to this headline"></a></h1>
+<h1>Development of a ROS2 component<a class="headerlink" href="#development-of-a-ros2-component" title="Permalink to this heading"></a></h1>
 <p>When you are developing a ROS2 system usually you will first check if
 the ROS2 ecosystem does not provide all components that you need for your
 system. If components are missing, you need to develop the component on your
 own. In this case study we will take a look into the steps necessary for
 such a development.</p>
 <section id="planning-design">
-<h2>1. Planning &amp; Design<a class="headerlink" href="#planning-design" title="Permalink to this headline"></a></h2>
+<h2>1. Planning &amp; Design<a class="headerlink" href="#planning-design" title="Permalink to this heading"></a></h2>
 <p>Before starting with the development of your ROS2 package, you need to plan
 a few things. Most importantly, you should already decide whether your
 package will be open sourced and if so which <strong>open source license</strong> to use for your package.
@@ -115,27 +116,27 @@ language you want to use for your ROS2 package. Prime support in ROS2 exists
 for C, C++ and Python, but other languages can also be used.</p>
 </section>
 <section id="workspace-setup-package-creation">
-<h2>2. Workspace Setup &amp; Package Creation<a class="headerlink" href="#workspace-setup-package-creation" title="Permalink to this headline"></a></h2>
+<h2>2. Workspace Setup &amp; Package Creation<a class="headerlink" href="#workspace-setup-package-creation" title="Permalink to this heading"></a></h2>
 <p>Once the initial decisions are done you can start creating your development
 workspace and packages. ROS2 documentation provides excellent tutorials for
 this.</p>
 </section>
 <section id="development-environment">
-<h2>3. Development Environment<a class="headerlink" href="#development-environment" title="Permalink to this headline"></a></h2>
+<h2>3. Development Environment<a class="headerlink" href="#development-environment" title="Permalink to this heading"></a></h2>
 <p>You can use any IDE of your choice to program ROS2 packages. However,
 Visual Studio Code currently provides quite extensive support for
 ROS and also extension packages for Python, C and C++, as well as CMAKE
 via Extensions.</p>
 </section>
 <section id="version-control-system">
-<h2>4. Version Control System<a class="headerlink" href="#version-control-system" title="Permalink to this headline"></a></h2>
+<h2>4. Version Control System<a class="headerlink" href="#version-control-system" title="Permalink to this heading"></a></h2>
 <p>Once you setup your package, workspace and IDE, it is time to think about
 the version control system you want to use. For ROS the only
 sensible choice is using GIT as version control system. You are free in
 choice of the hoster, but most ROS apckages are hosted on GitHub.</p>
 </section>
 <section id="continuous-integration">
-<h2>5. Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline"></a></h2>
+<h2>5. Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this heading"></a></h2>
 <p>Before you really start coding it also makes sense to setup your continuous
 integration system already.</p>
 </section>

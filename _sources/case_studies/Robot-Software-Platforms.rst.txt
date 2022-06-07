@@ -1,6 +1,14 @@
 Robot Software Platforms
 ========================
 
+Use Case
+--------
+Robotics is becoming more and more complex. When developing a new robot or application, writing all software for the robot and
+integrating the software is becoming a more and more complex endeavour. Consequently, it is very difficult today to integrate self
+written and third party software in a consistent way for use in product. A solution to this problem is using a robot software platform
+that provides ready-to-use and compatible components for creating robots.
+
+
 Most used platforms
 -------------------
 
@@ -81,8 +89,8 @@ and model-driven development support (important for high quality software develo
     OPRos, (Han et al. 2012), Stale, , ,
 
 
-Best practices
---------------
+Lessons Learned
+---------------
 ROS, ROS2, YARP, ROCK and OROCOS are currently the most predominant open-source robot software frameworks. 
 Concerning technical capabilities (more details in D1.14), all of these platforms enable building working 
 robots and all have been deployed in real applications. That being said, ROS and ROS2 stand out concerning 

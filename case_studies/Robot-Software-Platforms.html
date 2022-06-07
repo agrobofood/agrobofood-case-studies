@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -43,6 +44,7 @@
 <li class="toctree-l1"><a class="reference internal" href="CICD-for-robotics.html">Continuous Integration for Robotics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Robot-Safety-Strawberry-Harvesting.html">Strawberry harvesting and tending robots</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Robot Software Platforms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#use-case">Use Case</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#most-used-platforms">Most used platforms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#robot-operating-system-ros">Robot Operating System (ROS)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#robot-operating-system-2-ros2">Robot Operating System 2 (ROS2)</a></li>
@@ -52,7 +54,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#other-platforms">Other platforms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#best-practices">Best practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lessons-learned">Lessons Learned</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Software-Development-With-ROS.html">Development of a ROS2 component</a></li>
@@ -100,43 +102,50 @@
            <div itemprop="articleBody">
              
   <section id="robot-software-platforms">
-<h1>Robot Software Platforms<a class="headerlink" href="#robot-software-platforms" title="Permalink to this headline"></a></h1>
+<h1>Robot Software Platforms<a class="headerlink" href="#robot-software-platforms" title="Permalink to this heading"></a></h1>
+<section id="use-case">
+<h2>Use Case<a class="headerlink" href="#use-case" title="Permalink to this heading"></a></h2>
+<p>Robotics is becoming more and more complex. When developing a new robot or application, writing all software for the robot and
+integrating the software is becoming a more and more complex endeavour. Consequently, it is very difficult today to integrate self
+written and third party software in a consistent way for use in product. A solution to this problem is using a robot software platform
+that provides ready-to-use and compatible components for creating robots.</p>
+</section>
 <section id="most-used-platforms">
-<h2>Most used platforms<a class="headerlink" href="#most-used-platforms" title="Permalink to this headline"></a></h2>
+<h2>Most used platforms<a class="headerlink" href="#most-used-platforms" title="Permalink to this heading"></a></h2>
 <section id="robot-operating-system-ros">
-<h3>Robot Operating System (ROS)<a class="headerlink" href="#robot-operating-system-ros" title="Permalink to this headline"></a></h3>
+<h3>Robot Operating System (ROS)<a class="headerlink" href="#robot-operating-system-ros" title="Permalink to this heading"></a></h3>
 <p>The Robot Operating System is probably the best known open source software development kit for robotics.
 It is proven in use and already in many robot products. Today, more than 80k developers (Kolak et al. 2020)
 have used ROS for building software on Github.</p>
 </section>
 <section id="robot-operating-system-2-ros2">
-<h3>Robot Operating System 2 (ROS2)<a class="headerlink" href="#robot-operating-system-2-ros2" title="Permalink to this headline"></a></h3>
+<h3>Robot Operating System 2 (ROS2)<a class="headerlink" href="#robot-operating-system-2-ros2" title="Permalink to this heading"></a></h3>
 <p>ROS also has a second version, that is being developed by major companies (<a class="reference external" href="https://docs.ros.org/en/rolling/Governance.html">https://docs.ros.org/en/rolling/Governance.html</a>)
 and is cut towards industrial usage. The first stable release is from June 2020 and the package ecosystem is growing.
 It supports real-time and security requirements as well as functionality requirements modern robot software requires.</p>
 </section>
 <section id="yet-another-robot-platform-yarp">
-<h3>Yet another robot platform (YARP)<a class="headerlink" href="#yet-another-robot-platform-yarp" title="Permalink to this headline"></a></h3>
+<h3>Yet another robot platform (YARP)<a class="headerlink" href="#yet-another-robot-platform-yarp" title="Permalink to this heading"></a></h3>
 <p>YARP supports building a robot control system as a collection of programs communicating in a peer-to-peer way, with an extensible
 family of connection types (tcp, udp, multicast, local, MPI, mjpg-over-http, XML/RPC, tcpros) that can be swapped in and out
 to match your needs.</p>
 </section>
 <section id="the-robot-construction-kit-rock">
-<h3>The Robot Construction Kit (ROCK)<a class="headerlink" href="#the-robot-construction-kit-rock" title="Permalink to this headline"></a></h3>
+<h3>The Robot Construction Kit (ROCK)<a class="headerlink" href="#the-robot-construction-kit-rock" title="Permalink to this heading"></a></h3>
 <p>Rock is a software framework for the development of robotic systems. The underlying component model is based on the Orocos RTT
 (Real Time Toolkit). Rock provides all the tools required to set up and run high-performance and reliable robotic systems for
 wide variety of applications in research and industry. It contains a rich collection of ready to use drivers and modules for
 use in your own system, and can easily be extended by adding new components.</p>
 </section>
 <section id="open-robot-control-software-orocos">
-<h3>Open Robot Control Software (OROCOS)<a class="headerlink" href="#open-robot-control-software-orocos" title="Permalink to this headline"></a></h3>
+<h3>Open Robot Control Software (OROCOS)<a class="headerlink" href="#open-robot-control-software-orocos" title="Permalink to this heading"></a></h3>
 <p>Orocos is a portable C++ libraries for advanced machine and robot control. Over the years, Orocos has become a large project
 of middleware and tooling for development of robotics software. The main parts of this project are the Real Time Toolchain (RTT)
 and the Orocos Component Library (OCL).</p>
 </section>
 </section>
 <section id="other-platforms">
-<h2>Other platforms<a class="headerlink" href="#other-platforms" title="Permalink to this headline"></a></h2>
+<h2>Other platforms<a class="headerlink" href="#other-platforms" title="Permalink to this heading"></a></h2>
 <p>An extensive literature research has been conducted to identify other robot software platforms, that could be interesting to
 use in agricultural robots. Important characteristics such as activity status, package management support (important for ecosystem)
 and model-driven development support (important for high quality software development) have been evaluated.</p>
@@ -429,8 +438,8 @@ and model-driven development support (important for high quality software develo
 </tbody>
 </table>
 </section>
-<section id="best-practices">
-<h2>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline"></a></h2>
+<section id="lessons-learned">
+<h2>Lessons Learned<a class="headerlink" href="#lessons-learned" title="Permalink to this heading"></a></h2>
 <p>ROS, ROS2, YARP, ROCK and OROCOS are currently the most predominant open-source robot software frameworks.
 Concerning technical capabilities (more details in D1.14), all of these platforms enable building working
 robots and all have been deployed in real applications. That being said, ROS and ROS2 stand out concerning

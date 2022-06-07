@@ -9,8 +9,9 @@ written and third party software in a consistent way for use in product. A solut
 that provides ready-to-use and compatible components for creating robots.
 
 
-Most used platforms
+Approach
 -------------------
+Existing and most used open source robot software platforms were identified.
 
 Robot Operating System (ROS)
 """"""""""""""""""""""""""""

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Development of a ROS2 component &mdash; agROBOfood Case Studies  documentation</title>
+  <title>I-Catch – Monitoring and elimination Drone for greenhouse pests &mdash; agROBOfood Case Studies  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="IIE5 – Cucumber deleafing robot" href="agROBOfood_WUR_UC_cucumberdeleafingrobot.html" />
-    <link rel="prev" title="Robot Software Platforms" href="Robot-Software-Platforms.html" /> 
+    <link rel="next" title="Robot Security Study" href="robot_security.html" />
+    <link rel="prev" title="IIE5 – Cucumber deleafing robot" href="agROBOfood_WUR_UC_cucumberdeleafingrobot.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,16 +44,16 @@
 <li class="toctree-l1"><a class="reference internal" href="CICD-for-robotics.html">Continuous Integration for Robotics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Robot-Safety-Strawberry-Harvesting.html">Strawberry harvesting and tending robots</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Robot-Software-Platforms.html">Robot Software Platforms</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Development of a ROS2 component</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#planning-design">1. Planning &amp; Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#workspace-setup-package-creation">2. Workspace Setup &amp; Package Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#development-environment">3. Development Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-control-system">4. Version Control System</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#continuous-integration">5. Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Software-Development-With-ROS.html">Development of a ROS2 component</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agROBOfood_WUR_UC_cucumberdeleafingrobot.html">IIE5 – Cucumber deleafing robot</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">I-Catch – Monitoring and elimination Drone for greenhouse pests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#use-case-description">Use case description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#approach">Approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#standardization-needs-or-lessons-learned">Standardization needs or Lessons learned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#key-words">Key words</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sector-application">Sector/application</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="agROBOfood_WUR_UC_cucumberdeleafingrobot.html">IIE5 – Cucumber deleafing robot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agROBOfood_WUR_UC_droneGHpests.html">I-Catch – Monitoring and elimination Drone for greenhouse pests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="robot_security.html">Robot Security Study</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Relevant Standards</span></p>
@@ -87,9 +87,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Development of a ROS2 component</li>
+      <li>I-Catch – Monitoring and elimination Drone for greenhouse pests</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/case_studies/Software-Development-With-ROS.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/case_studies/agROBOfood_WUR_UC_droneGHpests.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -97,50 +97,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="development-of-a-ros2-component">
-<h1>Development of a ROS2 component<a class="headerlink" href="#development-of-a-ros2-component" title="Permalink to this heading"></a></h1>
-<p>When you are developing a ROS2 system usually you will first check if
-the ROS2 ecosystem does not provide all components that you need for your
-system. If components are missing, you need to develop the component on your
-own. In this case study we will take a look into the steps necessary for
-such a development.</p>
-<section id="planning-design">
-<h2>1. Planning &amp; Design<a class="headerlink" href="#planning-design" title="Permalink to this heading"></a></h2>
-<p>Before starting with the development of your ROS2 package, you need to plan
-a few things. Most importantly, you should already decide whether your
-package will be open sourced and if so which <strong>open source license</strong> to use for your package.
-Also if you want to integrate your ROS2 package into a ROS Distro you
-need to think about how you want to maintain the package and what kind of
-quality level your package should have. <strong>ROS2 package quality levels</strong> can be
-acessed here: <a class="reference external" href="https://discourse.ros.org/t/rep-2004-package-quality-categories/11988">https://discourse.ros.org/t/rep-2004-package-quality-categories/11988</a>
-Another choice you should take right at the beginning, is which programming
-language you want to use for your ROS2 package. Prime support in ROS2 exists
-for C, C++ and Python, but other languages can also be used.</p>
+  <section id="i-catch-monitoring-and-elimination-drone-for-greenhouse-pests">
+<h1>I-Catch – Monitoring and elimination Drone for greenhouse pests<a class="headerlink" href="#i-catch-monitoring-and-elimination-drone-for-greenhouse-pests" title="Permalink to this heading"></a></h1>
+<section id="use-case-description">
+<h2>Use case description<a class="headerlink" href="#use-case-description" title="Permalink to this heading"></a></h2>
+<p>Tomato leaf miner or Tuta absolutais a moth causing important damages to tomato crops. Since this insect is night active, this plague is hard to monitor and mostly it is done by assessing the damage the larvae cause on the leaves and fruits. By the time damage is visible, a population hasalready built up and control measures might be less effective. An early detection of pest presence and a precise monitoring are useful tools to better control tomato leaf miner.</p>
 </section>
-<section id="workspace-setup-package-creation">
-<h2>2. Workspace Setup &amp; Package Creation<a class="headerlink" href="#workspace-setup-package-creation" title="Permalink to this heading"></a></h2>
-<p>Once the initial decisions are done you can start creating your development
-workspace and packages. ROS2 documentation provides excellent tutorials for
-this.</p>
+<section id="approach">
+<h2>Approach<a class="headerlink" href="#approach" title="Permalink to this heading"></a></h2>
+<p>PATS has developed I-CATCH, a bio-inspired drone system for automated monitoring and mechanical elimination of flying pest insect populations in greenhouses. I-CATCH system consists of a computer vision system able to detect, track and distinguish harmful pest insects with AI-based software. The system controls a small, bat-like drone with fast in-crop manoeuvrability for accurate insect elimination by mid-air collision with the drone’s propellers. Autonomous and 24/7 operability is secured by a charging platform.</p>
 </section>
-<section id="development-environment">
-<h2>3. Development Environment<a class="headerlink" href="#development-environment" title="Permalink to this heading"></a></h2>
-<p>You can use any IDE of your choice to program ROS2 packages. However,
-Visual Studio Code currently provides quite extensive support for
-ROS and also extension packages for Python, C and C++, as well as CMAKE
-via Extensions.</p>
+<section id="standardization-needs-or-lessons-learned">
+<h2>Standardization needs or Lessons learned<a class="headerlink" href="#standardization-needs-or-lessons-learned" title="Permalink to this heading"></a></h2>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>Problem 1 – Development: Effectiveness of I-CATCH in tomato still unknown. Mitigation strategy: Continue testing during next growing season at Hortipower (2022)
+<a href="#id3"><span class="problematic" id="id4">*</span></a>Problem 2 - Market: COVID-19 possibly limits the dissemination of I-CATCH via physical exhibitions and event. Possible risk: Market promotion and uptake is limited, stalling (commercial) roll-out of the technology. Mitigation: Develop and organize digital events, demo’s and webinars to engage with potential clients</p>
 </section>
-<section id="version-control-system">
-<h2>4. Version Control System<a class="headerlink" href="#version-control-system" title="Permalink to this heading"></a></h2>
-<p>Once you setup your package, workspace and IDE, it is time to think about
-the version control system you want to use. For ROS the only
-sensible choice is using GIT as version control system. You are free in
-choice of the hoster, but most ROS apckages are hosted on GitHub.</p>
+<section id="key-words">
+<h2>Key words<a class="headerlink" href="#key-words" title="Permalink to this heading"></a></h2>
+<p><a href="#id5"><span class="problematic" id="id6">*</span></a>drones
+<a href="#id7"><span class="problematic" id="id8">*</span></a>computer vision
+<a href="#id9"><span class="problematic" id="id10">*</span></a>sensors</p>
 </section>
-<section id="continuous-integration">
-<h2>5. Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this heading"></a></h2>
-<p>Before you really start coding it also makes sense to setup your continuous
-integration system already.</p>
+<section id="sector-application">
+<h2>Sector/application<a class="headerlink" href="#sector-application" title="Permalink to this heading"></a></h2>
+<p><a href="#id11"><span class="problematic" id="id12">*</span></a>Greenhouse Horticulture – Fruits and Vegetables</p>
 </section>
 </section>
 
@@ -148,8 +128,8 @@ integration system already.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Robot-Software-Platforms.html" class="btn btn-neutral float-left" title="Robot Software Platforms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="agROBOfood_WUR_UC_cucumberdeleafingrobot.html" class="btn btn-neutral float-right" title="IIE5 – Cucumber deleafing robot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="agROBOfood_WUR_UC_cucumberdeleafingrobot.html" class="btn btn-neutral float-left" title="IIE5 – Cucumber deleafing robot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="robot_security.html" class="btn btn-neutral float-right" title="Robot Security Study" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

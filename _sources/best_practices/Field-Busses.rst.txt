@@ -9,6 +9,7 @@ For EtherCAT and CANopen there are integrations into the Robot Operating System.
 Recommendations
 ---------------
 We therefore recommend the following best practices:
+
 * For interfaces that are not interfacing with agricultural machinery use CANopen or EtherCAT
 * For interfaces that are interfacing with agricultural machinery use ISOBUS
 * For interfaces that require high frequency motion control (>100Hz) use EhterCAT

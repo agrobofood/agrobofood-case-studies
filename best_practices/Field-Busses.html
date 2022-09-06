@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Open Source Low-level Communication &mdash; agROBOfood Case Studies  documentation</title>
+  <title>Open Source Field Busses &mdash; agROBOfood Case Studies  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Open Source Manipulation" href="Manipulation.html" />
-    <link rel="prev" title="Open Source Licensing" href="Licensing.html" /> 
+    <link rel="next" title="Open Source Licensing" href="Licensing.html" />
+    <link rel="prev" title="Security Standards" href="../standards/Security.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -60,13 +60,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Best Practices</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Field-Busses.html">Open Source Field Busses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Licensing.html">Open Source Licensing</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Open Source Low-level Communication</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Open Source Field Busses</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#recommendations">Recommendations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#related-links-literature">Related Links &amp; Literature</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="Licensing.html">Open Source Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LowLevelCommunication.html">Open Source Low-level Communication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Manipulation.html">Open Source Manipulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Navigation.html">Open Source Navigation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Robotics-Middleware.html">Open Source Robotics Middleware</a></li>
@@ -86,9 +85,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Open Source Low-level Communication</li>
+      <li>Open Source Field Busses</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/best_practices/LowLevelCommunication.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/best_practices/Field-Busses.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -96,32 +95,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="open-source-low-level-communication">
-<h1>Open Source Low-level Communication<a class="headerlink" href="#open-source-low-level-communication" title="Permalink to this heading"></a></h1>
-<p>CAN-bus has been adopted as ISO standard 11783 (also known as
-“ISOBUS”[34, 35]) for agriculture machinery. It should be used
-for the low-level communication between motion controllers, actuators,
-and other components. Unfortunately, this conflicts with the internal
-low-level communication inside common mobile robotics platforms.</p>
-<p>Common protocols used in robotics for low-level communication are EtherCAT
-and CANopen. For both protocols there are open source libraries available in
-order to communicate with low level devices.</p>
+  <section id="open-source-field-busses">
+<h1>Open Source Field Busses<a class="headerlink" href="#open-source-field-busses" title="Permalink to this heading"></a></h1>
+<p>When developing an agricultural robot, it is often necessary to connect equipment such as grippers, sensors or other actuators.
+This is usually done using a field bus. While ISOBUS is the standard in large agricultural machinery, in robotics CANopen and
+EtherCAT are predominant due to their good support of motion control. For all three field busses open source libraries exist.
+For EtherCAT and CANopen there are integrations into the Robot Operating System.</p>
 <section id="recommendations">
 <h2>Recommendations<a class="headerlink" href="#recommendations" title="Permalink to this heading"></a></h2>
-<p>Use ISOBUS when you develop low-level components for the agricultural
-machinery market. If you are developing agricultural robot systems,
-choose the communication protocol that is fit for your use case and
-for which the necessary components are available. Avoid having multiple
-bussystems in your robot. EtherCAT, CANopen and ISOBUS are prooven in use
-for this application and for each bus an open source reference
-implementation exists.</p>
-</section>
-<section id="related-links-literature">
-<h2>Related Links &amp; Literature<a class="headerlink" href="#related-links-literature" title="Permalink to this heading"></a></h2>
-<p>[1] <a class="reference external" href="https://github.com/OpenEtherCATsociety/soem">https://github.com/OpenEtherCATsociety/soem</a></p>
-<p>[2] <a class="reference external" href="https://gitlab.com/etherlab.org/ethercat">https://gitlab.com/etherlab.org/ethercat</a></p>
-<p>[3] <a class="reference external" href="https://github.com/lely-industries/lely-core">https://github.com/lely-industries/lely-core</a></p>
-<p>[4] <a class="reference external" href="https://git.osb-connagtive.com/isobus/public/ISOAgLib">https://git.osb-connagtive.com/isobus/public/ISOAgLib</a></p>
+<p>We therefore recommend the following best practices:
+* For interfaces that are not interfacing with agricultural machinery use CANopen or EtherCAT
+* For interfaces that are interfacing with agricultural machinery use ISOBUS
+* For interfaces that require high frequency motion control (&gt;100Hz) use EhterCAT</p>
 </section>
 </section>
 
@@ -129,8 +114,8 @@ implementation exists.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Licensing.html" class="btn btn-neutral float-left" title="Open Source Licensing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Manipulation.html" class="btn btn-neutral float-right" title="Open Source Manipulation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../standards/Security.html" class="btn btn-neutral float-left" title="Security Standards" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Licensing.html" class="btn btn-neutral float-right" title="Open Source Licensing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

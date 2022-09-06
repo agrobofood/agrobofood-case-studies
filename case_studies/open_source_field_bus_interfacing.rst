@@ -1,4 +1,4 @@
-Open Source Field Bus Interfaces in ROS2
+Interfacing with field busses using ROS2
 =========================================
 
 Use Case

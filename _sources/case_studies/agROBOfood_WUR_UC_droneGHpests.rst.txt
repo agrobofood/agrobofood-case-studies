@@ -1,4 +1,4 @@
-I-Catch – Monitoring and elimination Drone for greenhouse pests
+Monitoring and elimination Drone for greenhouse pests
 =================================================================
 
 

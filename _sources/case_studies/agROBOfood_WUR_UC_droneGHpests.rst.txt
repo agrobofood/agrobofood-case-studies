@@ -15,9 +15,8 @@ PATS has developed I-CATCH, a bio-inspired drone system for automated monitoring
 
 Standardization needs or Lessons learned 
 -----------------------------------------
-*Problem 1 – Development: Effectiveness of I-CATCH in tomato still unknown. Mitigation strategy: Continue testing during next growing season at Hortipower (2022) 
-*Problem 2 - Market: COVID-19 possibly limits the dissemination of I-CATCH via physical exhibitions and event. Possible risk: Market promotion and uptake is limited, stalling (commercial) roll-out of the technology. Mitigation: Develop and organize digital events, demo’s and webinars to engage with potential clients 
-
+Testing I-CATCH is time expensive and depending on the season, which makes it difficult to estimate the systems effectiveness.
+AI-based algorithms for pest detection have proven to work well in intial tests.
  
 
 Key words

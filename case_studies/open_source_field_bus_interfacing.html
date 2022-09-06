@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Development of a ROS2 component &mdash; agROBOfood Case Studies  documentation</title>
+  <title>Open Source Field Bus Interfaces in ROS2 &mdash; agROBOfood Case Studies  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Cucumber deleafing robot" href="agROBOfood_WUR_UC_cucumberdeleafingrobot.html" />
-    <link rel="prev" title="Robot Software Platforms" href="Robot-Software-Platforms.html" /> 
+    <link rel="next" title="Robot Security Study" href="robot_security.html" />
+    <link rel="prev" title="Monitoring and elimination Drone for greenhouse pests" href="agROBOfood_WUR_UC_droneGHpests.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,17 +44,15 @@
 <li class="toctree-l1"><a class="reference internal" href="CICD-for-robotics.html">Continuous Integration for Robotics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Robot-Safety-Strawberry-Harvesting.html">Strawberry harvesting and tending robots</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Robot-Software-Platforms.html">Robot Software Platforms</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Development of a ROS2 component</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#planning-design">1. Planning &amp; Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#workspace-setup-package-creation">2. Workspace Setup &amp; Package Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#development-environment">3. Development Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-control-system">4. Version Control System</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#continuous-integration">5. Continuous Integration</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="Software-Development-With-ROS.html">Development of a ROS2 component</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agROBOfood_WUR_UC_cucumberdeleafingrobot.html">Cucumber deleafing robot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agROBOfood_WUR_UC_droneGHpests.html">Monitoring and elimination Drone for greenhouse pests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="open_source_field_bus_interfacing.html">Open Source Field Bus Interfaces in ROS2</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Open Source Field Bus Interfaces in ROS2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#use-case">Use Case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#approach">Approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lessons-learned">Lessons learned</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="robot_security.html">Robot Security Study</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Relevant Standards</span></p>
@@ -88,9 +86,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Development of a ROS2 component</li>
+      <li>Open Source Field Bus Interfaces in ROS2</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/case_studies/Software-Development-With-ROS.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/case_studies/open_source_field_bus_interfacing.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -98,50 +96,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="development-of-a-ros2-component">
-<h1>Development of a ROS2 component<a class="headerlink" href="#development-of-a-ros2-component" title="Permalink to this heading"></a></h1>
-<p>When you are developing a ROS2 system usually you will first check if
-the ROS2 ecosystem does not provide all components that you need for your
-system. If components are missing, you need to develop the component on your
-own. In this case study we will take a look into the steps necessary for
-such a development.</p>
-<section id="planning-design">
-<h2>1. Planning &amp; Design<a class="headerlink" href="#planning-design" title="Permalink to this heading"></a></h2>
-<p>Before starting with the development of your ROS2 package, you need to plan
-a few things. Most importantly, you should already decide whether your
-package will be open sourced and if so which <strong>open source license</strong> to use for your package.
-Also if you want to integrate your ROS2 package into a ROS Distro you
-need to think about how you want to maintain the package and what kind of
-quality level your package should have. <strong>ROS2 package quality levels</strong> can be
-acessed here: <a class="reference external" href="https://discourse.ros.org/t/rep-2004-package-quality-categories/11988">https://discourse.ros.org/t/rep-2004-package-quality-categories/11988</a>
-Another choice you should take right at the beginning, is which programming
-language you want to use for your ROS2 package. Prime support in ROS2 exists
-for C, C++ and Python, but other languages can also be used.</p>
+  <section id="open-source-field-bus-interfaces-in-ros2">
+<h1>Open Source Field Bus Interfaces in ROS2<a class="headerlink" href="#open-source-field-bus-interfaces-in-ros2" title="Permalink to this heading"></a></h1>
+<section id="use-case">
+<h2>Use Case<a class="headerlink" href="#use-case" title="Permalink to this heading"></a></h2>
+<p>When developing an agricultural robot, it is often necessary to connect equipment such as grippers, sensors or other actuators. This is usually done
+using a field bus. While ISOBUS is the standard in large agricultural machinery, in robotics other field busses are predominant.</p>
 </section>
-<section id="workspace-setup-package-creation">
-<h2>2. Workspace Setup &amp; Package Creation<a class="headerlink" href="#workspace-setup-package-creation" title="Permalink to this heading"></a></h2>
-<p>Once the initial decisions are done you can start creating your development
-workspace and packages. ROS2 documentation provides excellent tutorials for
-this.</p>
+<section id="approach">
+<h2>Approach<a class="headerlink" href="#approach" title="Permalink to this heading"></a></h2>
+<p>To decide which fieldbus to use in a robot we have made an analysis of available open source fieldbus implementations.</p>
+<ul class="simple">
+<li><p><strong>CANopen</strong>:
+CANopen is a fieldbus which is based on the CAN bus that is widely used in service robotics and mobile devices.
+Its main purppose in such devices is usually the connection of the drive system. CANopen comes with standard profiles
+for a large range of devices (most important is probably the cia402 profile for motion controllers).
+Due to its predominance in service robotics, a high quality ros driver exists for ROS1 and a ROS2 driver is under
+development.</p></li>
+<li><p><strong>EtherCAT</strong>:
+EtherCAT is a fielbus that is based on the Ethernet physical layer but implements a realtime protocol on top of it.
+This bus is also often used in robotics, mainly in industrial robotics in order to control drives, sensors and other
+systems. EhterCAT also has a safety extension called FSOE.
+A free and open source ROS1 and ROS2 driver exists.</p></li>
+<li><p><strong>ISOBUS</strong>:
+ISOBUS is a fieldbus that is based on the CAN bus. It is widely used in large agricultural machinery. There it is often
+used for interfacing with agricultural equipment. An open source implementation exists called isoaglib (<a class="reference external" href="https://git.osb-connagtive.com/isobus/public/ISOAgLib">https://git.osb-connagtive.com/isobus/public/ISOAgLib</a>)</p></li>
+</ul>
 </section>
-<section id="development-environment">
-<h2>3. Development Environment<a class="headerlink" href="#development-environment" title="Permalink to this heading"></a></h2>
-<p>You can use any IDE of your choice to program ROS2 packages. However,
-Visual Studio Code currently provides quite extensive support for
-ROS and also extension packages for Python, C and C++, as well as CMAKE
-via Extensions.</p>
-</section>
-<section id="version-control-system">
-<h2>4. Version Control System<a class="headerlink" href="#version-control-system" title="Permalink to this heading"></a></h2>
-<p>Once you setup your package, workspace and IDE, it is time to think about
-the version control system you want to use. For ROS the only
-sensible choice is using GIT as version control system. You are free in
-choice of the hoster, but most ROS apckages are hosted on GitHub.</p>
-</section>
-<section id="continuous-integration">
-<h2>5. Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this heading"></a></h2>
-<p>Before you really start coding it also makes sense to setup your continuous
-integration system already.</p>
+<section id="lessons-learned">
+<h2>Lessons learned<a class="headerlink" href="#lessons-learned" title="Permalink to this heading"></a></h2>
+<p>In robotics, CANopen and EtherCAT are predominantly used. There is not a lot of information
+available about ISOSBUS in the robotics community and no ROS drivers exist. In our experience,
+the following guidelines make sense:</p>
+<ul class="simple">
+<li><p>If you build a robot that does not need to interface with any agricultural external equipement, use CANopen or EtherCAT for your drivetrain</p></li>
+<li><p>If you build a robot that does need to interface with external agricultural equipment, use CANopen.</p></li>
+<li><p>If you build a robot that does need to support high frequency motion control (i.e. &gt;100hz) use EtherCAT.</p></li>
+</ul>
 </section>
 </section>
 
@@ -149,8 +140,8 @@ integration system already.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Robot-Software-Platforms.html" class="btn btn-neutral float-left" title="Robot Software Platforms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="agROBOfood_WUR_UC_cucumberdeleafingrobot.html" class="btn btn-neutral float-right" title="Cucumber deleafing robot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="agROBOfood_WUR_UC_droneGHpests.html" class="btn btn-neutral float-left" title="Monitoring and elimination Drone for greenhouse pests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="robot_security.html" class="btn btn-neutral float-right" title="Robot Security Study" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

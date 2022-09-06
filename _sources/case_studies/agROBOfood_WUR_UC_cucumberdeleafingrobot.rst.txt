@@ -1,4 +1,4 @@
-IIE5 – Cucumber deleafing robot
+Cucumber deleafing robot
 ==================================
 
 
